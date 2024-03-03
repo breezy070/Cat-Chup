@@ -74,7 +74,7 @@
     </div>
       <h3>{{post.title}} </h3>
       <p>{{post.message}}</p>
-      <p>created by: Fabrizio</p>
+      <p>created by: {{post.createdBy}}</p>
       <div class="tagwords">
         <a href="">Cat</a>
         <a href="">Parenting</a>
@@ -87,7 +87,20 @@
         <div class="actions">
         <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
       </div>
+      {# <div>{{comment.message}}</div> #}
+
   </div>
+  <div class="comments-wrapper col-12">
+    <h1>Comments:</h1>
+    {% for comment in comments%}
+    <div class="comment">
+
+      <h1>{{comment.message}}</h1>
+
+    </div>
+    {% endfor %}
+  </div>
+ 
 </div>
 
 {% endblock %}

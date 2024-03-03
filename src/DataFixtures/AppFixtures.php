@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Category;
+use App\Entity\Comment;
 use App\Entity\Post;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -77,6 +78,16 @@ class AppFixtures extends Fixture
         $category = new Category();
         $category->setName('Adoption');
         $manager->persist($category);
+
+        //create a comment
+        $comment = new Comment();
+        $comment->setMessage('This is the comment content');
+        $manager->persist($comment);
+        $comment->setIsValid(true);
+        $manager->persist($comment);
+        $comment->setCreatedBy('fabrizio');
+        $manager->persist($comment);
+
 
 
         $manager->flush();
