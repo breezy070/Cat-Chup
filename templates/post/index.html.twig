@@ -1,0 +1,172 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block body %}
+<style>
+
+h1 {
+    color: var(--main-darkgreen-color);
+    text-align: center;
+}
+
+.post-cards-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 1em;
+  border: none;
+  
+
+}
+
+.post-card{
+  background-color: var(--main-whitish-gray-color);
+  width: 20%;
+  border-radius: 15px;
+  border: none;
+  padding: 1em;
+  gap: 1em;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.post-card-img-wrapper{
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.post-card-img-wrapper > img {
+  max-width: 100%;
+  height: auto;
+  display:block;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+
+.post-card > p, h3 {
+  color: black;
+}
+
+.tagwords {
+    display:flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.tagwords > a {
+    text-decoration: none;
+    color: var(--main-darkgreen-color);
+
+}
+
+.interactions {
+    display:flex;
+    flex-direction: row;
+    gap: 1em;
+}
+</style>
+
+<h1 class="container-fluid spacer">Blog Articles </h1>
+
+<div class="post-cards-wrapper spacer container-fluid">
+{% for post in posts %}
+  <div class="post-card">
+    <div class="post-card-img-wrapper">
+       <img src="{{post.image}}" alt="">
+    </div>
+      <h3>{{post.title}} </h3>
+      <p>{{post.message}}</p>
+      <p>created by: Fabrizio</p>
+      <div class="tagwords">
+        <a href="">Cat</a>
+        <a href="">Parenting</a>
+        <a href="">Health</a>    
+      </div>
+        <div class="interactions">
+        <i class="fa-regular fa-comment">2</i>
+        <i class="fa-solid fa-thumbs-up">3</i>
+      </div>
+      <div class="actions">
+            <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
+            <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+            <span>{{ post.date ? post.date|date('Y-m-d') : '' }}</span>
+            <a href="{{ path('app_post_new') }}">Create Post</a>
+      </div>
+  </div>
+{% endfor %}
+
+    
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Post index{% endblock %}
+
+{% block body %}
+    <h1>Post index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th>CreatedBy</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.title }}</td>
+                <td>{{ post.message }}</td>
+                <td>{{ post.date ? post.date|date('Y-m-d') : '' }}</td>
+                <td>{{ post.createdBy }}</td>
+                <td>{{ post.image }}</td>
+                <td>
+                    <a href="{{ path('app_post_show', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('app_post_edit', {'id': post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_post_new') }}">Create new</a>
+{% endblock %} #}

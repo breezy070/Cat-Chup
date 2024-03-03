@@ -1,0 +1,372 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<style>
+
+.title-site {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: var(--main-darkgreen-color);
+}
+.banner_container {
+  
+
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+
+
+.cards_container{
+  display: grid;
+  gap: 1em;
+  justify-content: center;
+  justify-items: center;
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-rows: 40px 1fr
+
+}
+
+.card {
+  width: 500px;
+  background-color: var(--main-whitish-gray-color);
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+#card1 {
+  
+  width: 350px;
+  padding: 1em;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
+
+
+}
+
+.popular-text {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  z-index: 20;
+}
+
+
+
+#card2 {
+  
+  width: 330px;
+
+  padding: 1em;
+
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#card3 {
+
+  width: 330px;
+
+  padding: 1em;
+
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
+.image-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-wrapper > img {
+ border-radius: 15px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  display:block;
+  object-fit: contain;
+}
+
+.tagwords {
+  display: flex;
+  flex-direction: row;
+  gap: 3em;
+  
+
+}
+
+.tagwords > a {
+  text-decoration: none;
+  color: var(--main-darkgreen-color);
+}
+
+.category-pills-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.pill-wrapper {
+  position: relative;
+  width: 100px;
+  height: 60px;
+  background-color: var(--main-darker-grayish-color);
+  border: solid 1px var(--main-darkgreen-color);
+  border-radius:500px;
+}
+
+.pill {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+ 
+}
+
+.pill>a {
+  text-decoration: none;
+  color: var(--main-darkgreen-color);
+}
+
+.post-cards-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 1em;
+  border: none;
+  
+
+}
+
+.post-card{
+  background-color: var(--main-whitish-gray-color);
+  width: 20%;
+  border-radius: 15px;
+  border: none;
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+
+.post-card-img-wrapper{
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.post-card-img-wrapper > img {
+  max-width: 100%;
+  height: auto;
+  display:block;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 15px;
+}
+
+.post-card > p, h3 {
+  color: black;
+}
+
+</style>
+
+<div class="container-fluid title-site spacer">
+  <h1>Welcome to THE Blog for Cat Owners !</h1>
+</div>
+
+<div class="container-fluid banner_container spacer">
+  <div class="cards_container">
+    <div class="card" id="card1">
+      <div class="image-wrapper">
+        <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">      
+      </div>
+
+      <h3>Top 10 tips for your newly adopted cat </h3>
+      <div class="tagwords">
+        <a href="">Cat</a>
+        <a href="">Parenting</a>
+        <a href="">Health</a>    
+      </div>
+    </div>
+    <div class="popular-text">
+      <h2>Most Popular</h2>
+    </div>
+    <div class="card" id="card2">
+      <div class="image-wrapper">
+            <img src="https://images.unsplash.com/photo-1583795128727-6ec3642408f8?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+      </div>
+      <h3>Does my cat hate me ?</h3>
+      <div class="tagwords">
+        <a href="">Cat</a>
+        <a href="">Parenting</a>
+        <a href="">Health</a>    
+      </div>
+
+    </div>
+    <div class="card" id="card3">
+    <div class="image-wrapper">
+          <img src="https://images.unsplash.com/photo-1574231164645-d6f0e8553590?q=80&w=2004&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    </div>
+      <h3>Is your cat getting enough sleep ?</h3>
+      <div class="tagwords">
+        <a href="">Cat</a>
+        <a href="">Parenting</a>
+        <a href="">Health</a>    
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="category-pills-wrapper spacer">
+  <div class="pill-wrapper">
+    <div class="pill"><a href="">All</a></div>
+  </div>
+  <div class="pill-wrapper">
+     <div class="pill"><a href="">Health</a></div>
+  </div>
+  <div class="pill-wrapper">
+     <div class="pill"><a href="">Food</a></div>
+  </div>
+  <div class="pill-wrapper">
+     <div class="pill"><a href="">Safety</a></div>
+  </div>
+  <div class="pill-wrapper">
+     <div class="pill"><a href="">Parenting</a></div>
+  </div>
+  <div class="pill-wrapper">
+     <div class="pill"><a href="">Adoption</a></div>
+  </div>
+</div>
+
+<div class="post-cards-wrapper">
+{% for post in posts %}
+  <div class="post-card">
+    <div class="post-card-img-wrapper">
+       <img src="{{post.image}}" alt="">
+    </div>
+      <h3>{{post.title}} </h3>
+      <p>{{post.message}}</p>
+      <p>created by: Fabrizio</p>
+      <div class="tagwords">
+        <a href="">Cat</a>
+        <a href="">Parenting</a>
+        <a href="">Health</a>    
+      </div>
+        <div class="interactions">
+        <i class="fa-regular fa-comment">2</i>
+        <i class="fa-solid fa-thumbs-up">3</i>
+      </div>
+  </div>
+{% endfor %}
+</div>
+
+
+<style>
+
+.newsletter-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 300px;
+  border-radius: 15px;
+  background-color: var(--main-darker-grayish-color) ;
+}
+
+.subscribe-wrapper {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2em;
+  
+}
+
+.subscribe-wrapper > h2 {
+  color: var(--main-darkgreen-color)
+}
+
+.subemail-wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.subemail-wrapper > input {
+  width: 550px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  
+}
+
+.subemail-wrapper > button {
+  position: absolute;
+  width: 150px;
+  height: 40px;
+  background-color: var(--main-darkgreen-color);
+  color: white;
+  border-radius: 15px;
+  border: none;
+  right:0;
+}
+
+
+
+</style>
+
+<div class="container-fluid newsletter-wrapper spacer">
+  <div class="subscribe-wrapper">
+    <h2 class="logo">Cat'Chup !</h2>
+    <h3>Subscribe to our Newsletter</h3>
+    <div class="subemail-wrapper">
+      <input type="text" placeholder="Enter your e-mail">
+      <button>Subscribe</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock %}

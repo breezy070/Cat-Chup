@@ -1,0 +1,122 @@
+:root {
+    --main-darkgreen-color: rgb(0,65,86);
+    --main-whitish-gray-color: rgb(236,243,247);
+    --main-darker-grayish-color: rgb(199,218,224);
+}
+
+.spacer {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+.navbar {
+    background-color: white !important;
+  }
+  
+  .navbar-brand {
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 44px;
+    color: var(--main-darkgreen-color) !important;
+  }
+  .logo {
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--main-darkgreen-color);
+  }
+  
+  .custom_me-auto {
+    margin-left: auto !important;
+  }
+  
+  #navbarSupportedContent {
+    gap: 2em !important;
+  }
+  
+  
+  .navbar-nav > li > a {
+    color: var(--main-darkgreen-color) !important;
+  }
+  
+  .d-flex > button {
+    
+    background-color: var(--main-darker-grayish-color) !important;
+    color: black;
+  }
+  
+  .d-flex > button:hover {
+   background-color: var(--main-darkgreen-color) !important;
+    color: white;
+  }
+  
+
+
+
+
+body {
+    background-color: white;
+    overflow-x: hidden;
+    font-family: "Coda", system-ui ;
+    font-weight: 400;
+    font-style: normal;
+}
+
+footer {
+    background-color: var(--main-darkgreen-color) ;
+  
+  
+  }
+  
+  .footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  
+  }
+  
+  .footer-wrapper > a,p {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  
+  
+  }
+
+
+/*
+    START HOMEPAGE CSS
+*/
+
+/* .custom_banner_container {
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.custom_cards_container {
+    flex-direction: row;
+   
+}
+
+.img {
+    object-fit: cover;
+}
+
+.custom_card {
+    width: 15%;
+    
+} */
+
+
+
+
+
+
+/*
+    END HOMEPAGE CSS
+*/

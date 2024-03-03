@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login or Create Account{% endblock %}
+
+{% block body %}
+
+
+<div class="Connection-wrapper">
+<h1>Cat'Chup !</h1>
+<h2>The Blog For All Things Cats</h2>
+<h3><a href="{{ path('app_register') }}">Register</a></h3>
+<h3><a href="{{ path('app_login') }}">Login</a></h3>
+
+
+{% if app.user %}
+    <div class="mb-3">
+        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        
+    </div>
+{% endif %}
+
+
+</div>
+{% endblock %}
+
